@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.scss';
 import classNames from 'classnames';
+
 import usersFromServer from './api/users';
 import categoriesFromServer from './api/categories';
 import productsFromServer from './api/products';
@@ -67,8 +68,8 @@ export const App = () => {
   };
 
   const unselectedCategory = (categoryToDeleteId) => {
-    setSelectedCategoriesId(currentCategoriesId => currentCategoriesId
-      .filter(id => id !== categoryToDeleteId));
+    setSelectedCategoriesId(current => current
+      .filter(currentId => currentId !== categoryToDeleteId));
   };
 
   const isSelected = id => selectedCategoriesId
@@ -187,6 +188,7 @@ export const App = () => {
                     />
                   </span>
                 )}
+
               </p>
             </div>
 
@@ -226,6 +228,7 @@ export const App = () => {
                     </a>
                   )
               ))}
+
             </div>
 
             <div className="panel-block">
@@ -278,7 +281,6 @@ export const App = () => {
                     <th>
                       <span className="is-flex is-flex-wrap-nowrap">
                         Product
-
                         <a
                           href="#/"
                           onClick={() => {
